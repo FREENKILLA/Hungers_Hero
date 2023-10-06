@@ -1,19 +1,32 @@
 import pygame
 import sys
 
+def set_all_volume(sounds, mult):
+    for sound in sounds:
+        vol = sound.get_volume()
+        sound.set_volume(min(vol * mult, 0.01))
+
 # Inicialización
 pygame.init()
-size = (1000, 600)
+size = (1000, 600) 
 screen = pygame.display.set_mode(size)
-pygame.display.set_caption("Mi Videojuego")
+pygame.display.set_caption("Hungers Hero")
+logo = pygame.image.load("img/principal/logo.png")
+pygame.display.set_icon(logo)
 white = (255, 255, 255)
 
 # Carga de imagen y sonido
-bg_image = pygame.image.load("img/principal/Background2.png")
+bg_image = pygame.image.load("img/principal/Background3.png")
 bg_music = pygame.mixer.Sound("sounds/intro.mp3")
+
+seleccionar = pygame.mixer.Sound('sounds/Selec.wav')
+
 pygame.mixer.Sound.play(bg_music, loops=-1)
-bg_image = pygame.image.load("img/principal/background2.png"). convert() #Convertir el formato de la imagen
+bg_image = pygame.image.load("img/principal/background3.png"). convert() #Convertir el formato de la imagen
 bg_image = pygame.transform.scale(bg_image,(1000, 600))
+
+music = [bg_music, seleccionar]
+set_all_volume(music, 0.1)
 
 # Estado de idioma actual y última vez que se hizo clic
 current_language = "english"
@@ -47,18 +60,22 @@ menu_state = "main"
 # Acciones para los botones
 def start_game():
     print("Juego Iniciado")
+    seleccionar.play()
 
 def show_options():
     global menu_state
     print("Mostrando Opciones")
     menu_state = "options"
+    seleccionar.play()
 
 def show_controls():
     print("Mostrando Controles")
+    seleccionar.play()
 
 def go_back():
     global menu_state
     menu_state = "main"
+    seleccionar.play()
 
 def quit_game():
     pygame.quit()
@@ -67,6 +84,7 @@ def quit_game():
 def set_language(language):
     global current_language
     current_language = language
+    seleccionar.play()
 
 # Clase para los botones
 class Button:
@@ -96,16 +114,16 @@ class Button:
         else:
             pygame.draw.rect(screen, self.color, (self.x, self.y, self.width, self.height))
 
-        font = pygame.font.SysFont("arial", 30)
+        font = pygame.font.SysFont("fuentes/minecraft.ttf", 30)
         text = font.render(self.text, True, white)
         screen.blit(text, (self.x + (self.width/2 - text.get_width()/2), self.y + (self.height/2 - text.get_height()/2)))
 
 # Crear botones
 main_buttons = [
-    Button("Play", 400, 200, 200, 50, (0, 128, 0), (0, 255, 0), start_game),
-    Button("Options", 400, 260, 200, 50, (0, 128, 128), (0, 255, 255), show_options),
-    Button("Controls", 400, 320, 200, 50, (128, 0, 128), (255, 0, 255), show_controls),
-    Button("Exit", 400, 380, 200, 50, (128, 0, 0), (255, 0, 0), quit_game)
+    Button("Play", 400, 260, 200, 50, (0, 128, 0), (0, 255, 0), start_game),
+    Button("Options", 400, 320, 200, 50, (0, 128, 128), (0, 255, 255), show_options),
+    Button("Controls", 400, 380, 200, 50, (128, 0, 128), (255, 0, 255), show_controls),
+    Button("Exit", 400, 440, 200, 50, (128, 0, 0), (255, 0, 0), quit_game)
 ]
 
 option_buttons = [
