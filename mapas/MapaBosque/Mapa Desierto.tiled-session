@@ -1,0 +1,95 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "Mapa Bosque.tmx",
+    "expandedProjectPaths": [
+        "."
+    ],
+    "fileStates": {
+        "Mapa Bosque.tmx": {
+            "scale": 0.75,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 852,
+                "y": 341.33333333333337
+            }
+        },
+        "Pino.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "Pinos.tsx": {
+            "dynamicWrapping": false,
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "TileMap.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "Tileset2.1.tsx": {
+            "scaleInDock": 1
+        },
+        "Tileset2.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "Trees.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "beech.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "birch.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "fir.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "pine.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "scenery.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "tiles3.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        }
+    },
+    "last.imagePath": "E:/Mapa Desierto/beech",
+    "map.height": 575,
+    "map.lastUsedFormat": "tmx",
+    "map.width": 3000,
+    "openFiles": [
+        "Mapa Bosque.tmx"
+    ],
+    "project": "Mapa Desierto.tiled-project",
+    "recentFiles": [
+        "Mapa Bosque.tmx",
+        "beech.tsx",
+        "birch.tsx",
+        "pine.tsx",
+        "fir.tsx",
+        "tiles3.tsx",
+        "scenery.tsx",
+        "Pino.tsx",
+        "Pinos.tsx",
+        "Trees.tsx",
+        "Tileset2.tsx",
+        "TileMap.tsx"
+    ],
+    "tileset.lastUsedFormat": "tsx",
+    "tileset.tileSize": {
+        "height": 48,
+        "width": 32
+    }
+}
